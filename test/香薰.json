@@ -1,0 +1,160 @@
+{
+    "did": "blt.3.1lmt4ecjl0g01",
+    "name": "SO Smart Aroma Diffuser S1Pro",
+    "model": "bwj.diffuser.s1pro",
+    "properties": [
+        {
+            "name": "status",
+            "desc": "Status / 工作状态",
+            "type": "uint",
+            "rw": "",
+            "range": null,
+            "value_list": [
+                {
+                    "value": 0,
+                    "description": "Off",
+                    "desc_zh_cn": "Off"
+                },
+                {
+                    "value": 1,
+                    "description": "On",
+                    "desc_zh_cn": "On"
+                }
+            ]
+        },
+        {
+            "name": "battery-level",
+            "desc": " / 电量",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                1,
+                100,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "charging-status",
+            "desc": " / 充电状态",
+            "type": "uint",
+            "rw": "",
+            "range": null,
+            "value_list": [
+                {
+                    "value": 0,
+                    "description": "Not Charging",
+                    "desc_zh_cn": "Not Charging"
+                },
+                {
+                    "value": 1,
+                    "description": "Charging",
+                    "desc_zh_cn": "Charging"
+                },
+                {
+                    "value": 2,
+                    "description": "Charged Full",
+                    "desc_zh_cn": "Charged Full"
+                }
+            ]
+        },
+        {
+            "name": "fragrance-out-time",
+            "desc": " / 喷香时长",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                3,
+                30,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "idle-time",
+            "desc": " / 间隔时间",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                0,
+                30,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "auto-power-on",
+            "desc": " / 定时工作",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                1,
+                65535,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "unixtime",
+            "desc": " / 标准时间",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                1,
+                4294967295,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "repeat",
+            "desc": " / 重复",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                0,
+                255,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "light",
+            "desc": " / 氛围灯",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                0,
+                255,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "color",
+            "desc": " / 色彩",
+            "type": "uint",
+            "rw": "",
+            "range": [
+                0,
+                16777215,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "temperature",
+            "desc": " / 温度",
+            "type": "int",
+            "rw": "",
+            "range": [
+                -9,
+                80,
+                1
+            ],
+            "value_list": null
+        }
+    ],
+    "actions": [],
+    "values": {}
+}

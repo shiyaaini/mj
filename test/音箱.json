@@ -1,0 +1,161 @@
+{
+    "did": "980441678",
+    "name": "Xiaomi Smart Speaker Pro",
+    "model": "xiaomi.wifispeaker.oh2p",
+    "properties": [
+        {
+            "name": "volume",
+            "desc": "Volume / 音量",
+            "type": "uint",
+            "rw": "rw",
+            "range": [
+                5,
+                100,
+                1
+            ],
+            "value_list": null
+        },
+        {
+            "name": "mute-2",
+            "desc": "Mute / 静音",
+            "type": "bool",
+            "rw": "rw",
+            "range": null,
+            "value_list": null
+        },
+        {
+            "name": "playing-state",
+            "desc": "Playing State / 播放状态",
+            "type": "uint",
+            "rw": "r",
+            "range": null,
+            "value_list": [
+                {
+                    "value": 1,
+                    "description": "Playing",
+                    "desc_zh_cn": "播放中"
+                },
+                {
+                    "value": 0,
+                    "description": "Stop"
+                },
+                {
+                    "value": 2,
+                    "description": "Pause"
+                }
+            ]
+        },
+        {
+            "name": "mute-4",
+            "desc": "Mute / 静音",
+            "type": "bool",
+            "rw": "rw",
+            "range": null,
+            "value_list": null
+        },
+        {
+            "name": "text-content",
+            "desc": "Text Content / 文本内容",
+            "type": "string",
+            "rw": "",
+            "range": null,
+            "value_list": null
+        },
+        {
+            "name": "silent-execution",
+            "desc": "Silent Execution / 指令静默执行",
+            "type": "bool",
+            "rw": "",
+            "range": null,
+            "value_list": null
+        },
+        {
+            "name": "sleep-mode",
+            "desc": "Sleep Mode / 睡眠模式",
+            "type": "bool",
+            "rw": "rw",
+            "range": null,
+            "value_list": null
+        },
+        {
+            "name": "audio-id",
+            "desc": "Audio Id / 音频ID",
+            "type": "string",
+            "rw": "r",
+            "range": null,
+            "value_list": null
+        },
+        {
+            "name": "no-disturb",
+            "desc": "No Disturb / 勿扰",
+            "type": "bool",
+            "rw": "rw",
+            "range": null,
+            "value_list": null
+        },
+        {
+            "name": "enable-time-period",
+            "desc": "Enable Time Period / 启用时间段(格式为：'00:00:00-00:00:00')",
+            "type": "string",
+            "rw": "rw",
+            "range": null,
+            "value_list": null
+        }
+    ],
+    "actions": [
+        {
+            "name": "play",
+            "desc": "Play / 播放"
+        },
+        {
+            "name": "pause",
+            "desc": "Pause / 暂停"
+        },
+        {
+            "name": "previous",
+            "desc": "Previous / 上一首"
+        },
+        {
+            "name": "next",
+            "desc": "Next / 下一首"
+        },
+        {
+            "name": "stop-alarm",
+            "desc": "Stop Alarm / 停止闹钟"
+        },
+        {
+            "name": "wake-up",
+            "desc": "Wake Up / 唤醒"
+        },
+        {
+            "name": "play-radio",
+            "desc": "Play Radio / 播放电台"
+        },
+        {
+            "name": "play-text",
+            "desc": "Play Text / 播放文本"
+        },
+        {
+            "name": "execute-text-directive",
+            "desc": "Execute Text Directive / 执行文本指令"
+        },
+        {
+            "name": "play-music",
+            "desc": "Play Music / 播放音乐"
+        },
+        {
+            "name": "tv-switchon",
+            "desc": "tv-switchon / 打开电视"
+        }
+    ],
+    "values": {
+        "volume": 52,
+        "mute-2": true,
+        "playing-state": 0,
+        "mute-4": false,
+        "sleep-mode": true,
+        "audio-id": "",
+        "no-disturb": true,
+        "enable-time-period": "21:50:00-06:50:00"
+    }
+}

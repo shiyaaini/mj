@@ -1,0 +1,147 @@
+import type { AutomationRule, Device, Room, Scene, UnlockRecord } from '@mi-home/shared'
+
+export const rooms: Room[] = [
+  { id: 'all', nameKey: '全部', name: '全部' },
+  { id: 'living', nameKey: '客厅', name: '客厅' },
+  { id: 'bedroom', nameKey: '卧室', name: '卧室' },
+  { id: 'kitchen', nameKey: '厨房', name: '厨房' },
+  { id: 'balcony', nameKey: '阳台', name: '阳台' },
+]
+
+export const devices: Device[] = [
+  {
+    id: 'purifier-1',
+    nameKey: '空气净化器 2S',
+    name: '空气净化器 2S',
+    roomId: 'living',
+    type: 'air-purifier',
+    status: 'online',
+    preview: { pm25: 12, power: true, mode: 'auto' },
+  },
+  {
+    id: 'camera-1',
+    nameKey: '智能摄像机',
+    name: '智能摄像机',
+    roomId: 'living',
+    type: 'camera',
+    status: 'online',
+    preview: { recording: false },
+  },
+  {
+    id: 'lamp-1',
+    nameKey: '床头灯',
+    name: '床头灯',
+    roomId: 'bedroom',
+    type: 'light',
+    status: 'online',
+    preview: { power: true, brightness: 60 },
+  },
+  {
+    id: 'vacuum-1',
+    nameKey: '扫地机器人',
+    name: '扫地机器人',
+    roomId: 'living',
+    type: 'vacuum',
+    status: 'online',
+    preview: { cleaning: false, battery: 82 },
+  },
+  {
+    id: 'plug-1',
+    nameKey: '智能插座',
+    name: '智能插座',
+    roomId: 'kitchen',
+    type: 'plug',
+    status: 'online',
+    preview: { power: false },
+  },
+  {
+    id: 'pcboot-1',
+    nameKey: '电脑开机卡',
+    name: '电脑开机卡',
+    model: 'hipc.plug.m1',
+    roomId: 'living',
+    type: 'pc-boot',
+    status: 'online',
+    preview: { power: true },
+  },
+  {
+    id: 'sensor-1',
+    nameKey: '温湿度传感器',
+    name: '温湿度传感器',
+    roomId: 'bedroom',
+    type: 'sensor',
+    status: 'online',
+    preview: { temperature: 26, humidity: 58 },
+  },
+  {
+    id: 'scale-1',
+    nameKey: '米家体脂秤 S400',
+    name: '米家体脂秤 S400',
+    model: 'yunmai.scales.ms107',
+    roomId: 'bedroom',
+    type: 'scale',
+    status: 'online',
+    preview: { weight: 87.9 },
+  },
+  {
+    id: 'lock-1',
+    nameKey: '智能门锁',
+    name: '智能门锁',
+    roomId: 'living',
+    type: 'lock',
+    status: 'online',
+    preview: { battery: 85 },
+  },
+  {
+    id: 'speaker-1',
+    nameKey: '小米智能音箱 Pro',
+    name: '小米智能音箱 Pro',
+    model: 'xiaomi.wifispeaker.oh2p',
+    roomId: 'living',
+    type: 'speaker',
+    status: 'online',
+    preview: { volume: 52, playing: false },
+  },
+  {
+    id: 'derh-1',
+    nameKey: '米家智能除湿机',
+    name: '米家智能除湿机',
+    model: 'xiaomi.derh.13l',
+    roomId: 'balcony',
+    type: 'dehumidifier',
+    status: 'online',
+    preview: { power: true, humidity: 63 },
+  },
+  {
+    id: 'abwheel-1',
+    nameKey: '米家健腹轮',
+    name: '米家健腹轮',
+    model: 'xiaomi.abwheel.jfl001',
+    roomId: 'living',
+    type: 'ab-wheel',
+    status: 'offline',
+    preview: {},
+  },
+]
+
+export const scenes: Scene[] = [
+  { id: 'leave', nameKey: '离家模式', name: '离家模式', descKey: '关闭不必要设备', icon: 'leave' },
+  { id: 'home', nameKey: '回家模式', name: '回家模式', descKey: '开启灯光与空调', icon: 'home' },
+  { id: 'sleep', nameKey: '睡眠模式', name: '睡眠模式', descKey: '关灯并开启净化器', icon: 'sleep' },
+  { id: 'movie', nameKey: '观影模式', name: '观影模式', descKey: '调暗灯光', icon: 'movie' },
+  { id: 'read', nameKey: '阅读模式', name: '阅读模式', descKey: '开启台灯并调节亮度', icon: 'read' },
+]
+
+export const automations: AutomationRule[] = [
+  { id: 'a1', nameKey: '检测到有人 → 打开客厅灯', enabled: true },
+  { id: 'a2', nameKey: '温度过高 → 打开空调', enabled: true },
+  { id: 'a3', nameKey: '晚上 22:00 → 关闭全部灯光', enabled: false },
+  { id: 'a4', nameKey: '门锁打开 → 摄像机开始录像', enabled: true },
+]
+
+export const unlockRecords: UnlockRecord[] = [
+  { id: 'u1', time: '今天 08:12', methodKey: '指纹开锁' },
+  { id: 'u2', time: '昨天 19:40', methodKey: '手机蓝牙' },
+  { id: 'u3', time: '昨天 07:55', methodKey: '密码开锁' },
+  { id: 'u4', time: '周一 21:18', methodKey: 'NFC 开锁' },
+]

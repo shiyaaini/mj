@@ -1,0 +1,32 @@
+appId: com.mihome.pc
+productName: 米家
+copyright: Copyright © Mi Home PC
+directories:
+  output: release
+  buildResources: build
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - package.json
+extraResources:
+  - from: ../bridge/dist/mi-home-bridge
+    to: bridge
+    filter:
+      - '**/*'
+asar: true
+asarUnpack:
+  - '**/*.node'
+win:
+  icon: build/icon.png
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: ${productName}-${version}-Setup.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 米家
+  deleteAppDataOnUninstall: false

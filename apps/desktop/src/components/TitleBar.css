@@ -1,0 +1,66 @@
+/* Frameless: no title strip — drag zone + in-window controls */
+.title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  z-index: 100;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  pointer-events: none;
+  background: transparent;
+  user-select: none;
+}
+
+.title-bar-drag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Leave the window controls clickable; do not cover them with drag */
+  right: 140px;
+  bottom: 0;
+  pointer-events: auto;
+  app-region: drag;
+  -webkit-app-region: drag;
+}
+
+.title-bar-controls {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+  padding: 4px 8px 4px 0;
+  pointer-events: auto;
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
+.title-bar-controls button {
+  width: 40px;
+  height: 28px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+  pointer-events: auto;
+}
+
+.title-bar-controls button:hover {
+  background: var(--ghost-bg);
+  color: var(--text);
+}
+
+.title-bar-controls button.close:hover {
+  background: #e04545;
+  color: #fff;
+}

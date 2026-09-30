@@ -1,0 +1,9 @@
+{
+  "id": "yeelink-light-demo",
+  "name": "彩灯示例",
+  "version": "1.0.0",
+  "match": "yeelink.light.*",
+  "logo": "assets/logo.svg",
+  "author": "demo",
+  "description": "开关 / 亮度 / 色温；打包成 zip 后在「插件」页安装"
+}

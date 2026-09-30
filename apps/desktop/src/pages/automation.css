@@ -1,0 +1,23 @@
+.auto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auto-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.auto-item h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.auto-item p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}

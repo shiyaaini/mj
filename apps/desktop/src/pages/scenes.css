@@ -1,0 +1,49 @@
+.scene-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.scene-card {
+  overflow: hidden;
+  text-align: left;
+  padding: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scene-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.scene-art {
+  height: 110px;
+}
+
+.scene-body {
+  padding: 16px 18px 18px;
+}
+
+.scene-body h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.scene-body p {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.scene-body span {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.scene-card.create {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  border-style: dashed;
+}

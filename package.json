@@ -1,0 +1,21 @@
+{
+  "name": "mi-home-pc",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mi Home Windows desktop client",
+  "scripts": {
+    "dev": "pnpm --filter @mi-home/desktop dev",
+    "build": "pnpm --filter @mi-home/desktop build",
+    "preview": "pnpm --filter @mi-home/desktop preview",
+    "bridge:dev": "pnpm --filter @mi-home/bridge dev",
+    "bridge:start": "pnpm --filter @mi-home/bridge start",
+    "bridge:build": "pnpm --filter @mi-home/bridge build:exe",
+    "dev:all": "pnpm bridge:dev",
+    "dist": "pnpm bridge:build && pnpm --filter @mi-home/desktop dist",
+    "dist:dir": "pnpm bridge:build && pnpm --filter @mi-home/desktop dist:dir"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  }
+}

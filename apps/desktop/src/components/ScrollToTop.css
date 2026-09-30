@@ -1,0 +1,75 @@
+.scroll-top-btn {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 30;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 14px;
+  border: 1px solid rgba(26, 35, 50, 0.1);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text-secondary);
+  box-shadow:
+    0 4px 16px rgba(40, 70, 110, 0.14),
+    0 1px 3px rgba(40, 70, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+  animation: scroll-top-in 0.2s ease;
+}
+
+html[data-theme='dark'] .scroll-top-btn {
+  background: rgba(36, 44, 58, 0.72);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--text-secondary);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.scroll-top-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-2px);
+  color: var(--btn-soft-fg, var(--accent));
+  background: var(--btn-soft, rgba(59, 130, 246, 0.14));
+  border-color: var(--btn-soft-border, rgba(59, 130, 246, 0.28));
+  box-shadow:
+    0 8px 22px rgba(40, 70, 110, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.scroll-top-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes scroll-top-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .scroll-top-btn {
+    right: 16px;
+    bottom: 20px;
+  }
+}

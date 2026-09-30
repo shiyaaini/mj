@@ -1,0 +1,11 @@
+{
+  "name": "@mi-home/bridge",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "uv run uvicorn main:app --reload --host 127.0.0.1 --port 8787",
+    "start": "uv run uvicorn main:app --host 127.0.0.1 --port 8787",
+    "archive:miot": "uv run python -m mi_home_bridge.archive_catalog",
+    "build:exe": "uv sync --group build && uv run pyinstaller mi-home-bridge.spec --noconfirm --clean && uv run python -m mi_home_bridge.pack_data"
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灯泡开关</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif;
+        }
+        body {
+            background-color: #171c26;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .title {
+            font-size: 48px;
+            color: #e9ebf0;
+            margin-bottom: 12px;
+        }
+        .device-id {
+            font-size: 22px;
+            color: #8a929f;
+            margin-bottom: 80px;
+        }
+        /* 开关容器 */
+        .switch-wrap {
+            position: relative;
+            margin-bottom: 80px;
+        }
+        /* 圆形主按钮 */
+        .power-btn {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+        /* 开启状态光晕 */
+        .power-btn.on {
+            box-shadow: 0 0 60px 25px rgba(255,255,255,0.35);
+        }
+        /* 关闭样式 */
+        .power-btn.off {
+            background-color: #2c3340;
+            box-shadow: none;
+        }
+        .power-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 12px;
+        }
+        .state-text {
+            font-size: 32px;
+            font-weight: 500;
+        }
+        /* 开启时文字和图标蓝色 */
+        .power-btn.on .state-text,
+        .power-btn.on .power-icon path {
+            fill: #367bfa;
+            color: #367bfa;
+        }
+        /* 关闭时灰色 */
+        .power-btn.off .state-text,
+        .power-btn.off .power-icon path {
+            fill: #8a929f;
+            color: #8a929f;
+        }
+        .tip-text {
+            font-size: 22px;
+            color: #6c7480;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">灯泡</h1>
+    <div class="device-id">yeelink.light.mbulb3</div>
+
+    <div class="switch-wrap">
+        <button class="power-btn on" id="powerBtn">
+            <!-- SVG电源图标 -->
+            <svg class="power-icon" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+            <span class="state-text">已开启</span>
+        </button>
+    </div>
+
+    <div class="tip-text">已显示上次状态</div>
+
+    <script>
+        const powerBtn = document.getElementById('powerBtn');
+        const stateText = powerBtn.querySelector('.state-text');
+        let isOn = true;
+
+        powerBtn.addEventListener('click', ()=>{
+            isOn = !isOn;
+            if(isOn){
+                powerBtn.classList.remove('off');
+                powerBtn.classList.add('on');
+                stateText.textContent = "已开启";
+                console.log("灯泡打开");
+            }else{
+                powerBtn.classList.remove('on');
+                powerBtn.classList.add('off');
+                stateText.textContent = "已关闭";
+                console.log("灯泡关闭");
+            }
+        })
+    </script>
+</body>
+</html>

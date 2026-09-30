@@ -1,0 +1,43 @@
+{
+  "name": "@mi-home/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mi Home PC Electron app",
+  "author": "Mi Home PC",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "pack": "pnpm build && electron-builder --config electron-builder.yml --win",
+    "pack:dir": "pnpm build && electron-builder --config electron-builder.yml --win --dir",
+    "dist": "pnpm build && electron-builder --config electron-builder.yml --win",
+    "dist:dir": "pnpm build && electron-builder --config electron-builder.yml --win --dir"
+  },
+  "dependencies": {
+    "@mi-home/shared": "workspace:*",
+    "adm-zip": "^0.6.1",
+    "chart.js": "^4.5.1",
+    "chartjs-plugin-zoom": "^2.2.0",
+    "hammerjs": "2.0.8",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router": "^7.8.2",
+    "react-router-dom": "^7.8.2",
+    "sucrase": "^3.35.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "electron": "^37.3.1",
+    "electron-builder": "^26.15.3",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3",
+    "vite-plugin-electron": "^0.29.0",
+    "vite-plugin-electron-renderer": "^0.14.6"
+  }
+}
